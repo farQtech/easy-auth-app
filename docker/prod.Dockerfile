@@ -7,6 +7,8 @@ WORKDIR /app
 COPY package*.json ./
 COPY turbo.json ./
 
+RUN npm ci
+
 # Copy the entire monorepo
 COPY . .
 
@@ -28,6 +30,9 @@ RUN apk add --no-cache libc6-compat
 COPY --from=builder /app/apps/api/dist ./dist
 COPY --from=builder /app/apps/client/dist ./public
 COPY --from=builder /app/apps/api/package*.json ./
+
+# Install only production dependencies for API
+RUN npm install --omit=dev
 
 EXPOSE 3000
 

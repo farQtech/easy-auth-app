@@ -3,13 +3,13 @@ FROM node:20 AS builder
 
 WORKDIR /app
 
-# Copy package files first for caching
+# Copy package files
 COPY package*.json ./
 COPY turbo.json ./
 
 # Install  dependencies
 RUN echo "Installing dependencies..." && \
-    npm install && \
+    npm ci  && \
     echo "Dependencies installed"
 
 # Copy the full monorepo

@@ -1,0 +1,33 @@
+name: CI
+
+on:
+  push:
+    branches: [main, master]
+  pull_request:
+    branches: [main, master]
+
+jobs:
+  build-and-test:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
+          cache: 'npm'
+
+      - name: Install dependencies (root)
+        run: npm install
+
+      - name: Run all tests
+        run: npm run test
+
+      - name: Build all apps
+        run: npm run build
+
+     # - name: Docker build
+     #   run: docker build -f docker/prod.Dockerfile -t easy-auth-app:ci . 

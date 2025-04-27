@@ -1,5 +1,7 @@
 # Easy Auth App Monorepo
 
+[![CI](https://github.com/farQtech/easy-auth-app/actions/workflows/ci.yml/badge.svg)](https://github.com/farQtech/easy-auth-app/actions/workflows/ci.yml)
+
 Welcome to the **Easy Auth App**! This monorepo contains both the API (NestJS) and Client (React) projects for a modern, secure authentication system.
 
 ---
@@ -73,3 +75,4 @@ npm install
 - [API README](./apps/api/README.md)
 - [Client README](./apps/client/README.md)
 
+---

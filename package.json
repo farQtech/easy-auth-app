@@ -1,0 +1,25 @@
+{
+  "devDependencies": {
+    "turbo": "^2.5.2"
+  },
+  "workspaces": [
+    "apps/*"
+  ],
+  "scripts": {
+    "build": "turbo run build",
+    "dev": "turbo run dev",
+    "test": "turbo run test",
+    "start": "turbo run start --filter=web",
+    "prod": "node apps/api/dist/main",
+    "docker:dev": "docker-compose up api-dev client-dev",
+    "docker:dev:api": "docker-compose up api-dev",
+    "docker:dev:client": "docker-compose up client-dev",
+    "docker:prod": "docker-compose up app-prod",
+    "docker:build": "docker-compose build",
+    "docker:down": "docker-compose down"
+  },
+  "packageManager": "npm@10.2.4",
+  "dependencies": {
+    "@nestjs/serve-static": "^5.0.3"
+  }
+}

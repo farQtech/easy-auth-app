@@ -21,14 +21,7 @@ npm install
 ```
 
 ### 2. Development
-- **API:**
   ```sh
-  cd apps/api
-  npm run dev
-  ```
-- **Client:**
-  ```sh
-  cd apps/client
   npm run dev
   ```
 
@@ -37,7 +30,7 @@ npm install
   ```sh
   npm run build
   ```
-- **Start API (serves both API and static client):**
+- **Start API Prod (serves both API and static client):**
   ```sh
   npm run prod
   ```
